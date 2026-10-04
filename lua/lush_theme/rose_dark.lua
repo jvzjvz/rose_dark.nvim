@@ -99,6 +99,22 @@ local c46 = hsl('#7E7F83')
 local c47 = hsl('#FFB140')
 local c48 = hsl('#E55381')
 
+local pink0 = c27
+local pink1 = c48
+local pink2 = c48.desaturate(40).darken(20)
+
+local gray0 = c34
+local gray1 = c46
+local gray2 = c46.darken(50)
+
+local white0 = c38
+
+local blue0 = c31.desaturate(20)
+
+local yellow0 = c47.desaturate(20)
+
+local tan0 = c9
+
 -- local white = 
 -- local pink = c48
 
@@ -197,32 +213,32 @@ local theme = lush(function(injected_functions)
     --
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Comment        { fg = c46.darken(50) }, -- Any comment
+    Comment        { fg = gray2 }, -- Any comment
 
     -- Constant       { fg = c46 }, -- (*) Any constant
     -- Constant       { fg = c15.lighten(10) }, -- (*) Any constant
-    Constant       { fg = c48 }, -- (*) Any constant
-    String         { fg = c27 }, --   A string constant: "this is a string"
+    Constant       { fg = pink1 }, -- (*) Any constant
+    String         { fg = pink0 }, --   A string constant: "this is a string"
     -- Character      { }, --   A character constant: 'c', '\n'
     -- Number         { }, --   A number constant: 234, 0xff
     -- Boolean        { }, --   A boolean constant: TRUE, false
     -- Float          { }, --   A floating point constant: 2.3e10
 
-    Identifier     { fg = c46 }, -- (*) Any variable name
+    Identifier     { fg = gray1 }, -- (*) Any variable name
     -- Identifier     { fg = c0 }, -- (*) Any variable name
     -- Function       { fg = c18.lighten(20) }, --   Function name (also: methods for classes)
     -- Function       { fg = c9 }, --   Function name (also: methods for classes)
-    Function       { fg = c38 }, --   Function name (also: methods for classes)
+    Function       { fg = white0 }, --   Function name (also: methods for classes)
     -- Function       { fg = c24.darken(23).desaturate(50) }, --   Function name (also: methods for classes)
 
     -- Statement      { fg = c42 }, -- (*) Any statement
-    Statement      { fg = c34 }, -- (*) Any statement
+    Statement      { fg = gray0 }, -- (*) Any statement
     -- Conditional    { }, --   if, then, else, endif, switch, etc.
     -- Repeat         { }, --   for, do, while, etc.
     -- Label          { }, --   case, default, etc.
     -- Operator       { fg = c46 }, --   "sizeof", "+", "*", etc.
     -- Operator       { fg = c9 }, --   "sizeof", "+", "*", etc.
-    Operator       { fg = c48.desaturate(40).darken(20) }, --   "sizeof", "+", "*", etc.
+    Operator       { fg = pink2 }, --   "sizeof", "+", "*", etc.
     -- Keyword        { }, --   any other keyword
     -- Exception      { }, --   try, catch, throw
 
@@ -232,7 +248,7 @@ local theme = lush(function(injected_functions)
     -- Macro          { }, --   Same as Define
     -- PreCondit      { }, --   Preprocessor #if, #else, #endif, etc.
 
-    Type           { fg = c9 }, -- (*) int, long, char, etc.
+    Type           { fg = tan0 }, -- (*) int, long, char, etc.
     -- StorageClass   { }, --   static, register, volatile, etc.
     -- Structure      { }, --   struct, union, enum, etc.
     -- Typedef        { }, --   A typedef
@@ -240,11 +256,11 @@ local theme = lush(function(injected_functions)
     -- Special        { fg = c46 }, -- (*) Any special symbol
     -- Special        { fg = c34 }, -- (*) Any special symbol
     -- Special        { fg = c9 }, -- (*) Any special symbol
-    Special        { fg = c38 }, -- (*) Any special symbol
+    Special        { fg = white0 }, -- (*) Any special symbol
     -- Special        { fg = c38.desaturate(30) }, -- (*) Any special symbol
     -- SpecialChar    { }, --   Special character in a constant
     -- Tag            { }, --   You can use CTRL-] on this
-    Delimiter      { fg = c46 }, --   Character that needs attention
+    Delimiter      { fg = gray1 }, --   Character that needs attention
     -- SpecialComment { }, --   Special things inside a comment (e.g. '\n')
     -- Debug          { }, --   Debugging statements
 
@@ -339,7 +355,7 @@ local theme = lush(function(injected_functions)
     -- sym"@method"            { }, -- Function
     -- sym"@field"             { }, -- Identifier
     -- sym"@property"          { fg = c46.lighten(20) }, -- Identifier
-    sym"@property"          { fg = c31.desaturate(20) }, -- Identifier
+    sym"@property"          { fg = blue0 }, -- Identifier
     -- sym"@constructor"       { }, -- Special
     -- sym"@conditional"       { }, -- Conditional
     -- sym"@repeat"            { }, -- Repeat
@@ -347,7 +363,7 @@ local theme = lush(function(injected_functions)
     -- sym"@operator"          { }, -- Operator
     -- sym"@keyword"           { }, -- Keyword
     -- sym"@exception"         { }, -- Exception
-    sym"@variable"          { fg = c47.desaturate(20) }, -- Identifier
+    sym"@variable"          { fg = yellow0 }, -- Identifier
     -- sym"@type"              { }, -- Type
     -- sym"@type.definition"   { }, -- Typedef
     -- sym"@storageclass"      { }, -- StorageClass
