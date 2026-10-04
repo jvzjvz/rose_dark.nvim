@@ -219,21 +219,23 @@ local theme = lush(function(injected_functions)
     -- Constant       { fg = c46 }, -- (*) Any constant
     -- Constant       { fg = c15.lighten(10) }, -- (*) Any constant
     Constant       { fg = pink1 }, -- (*) Any constant
-    String         { fg = pink0 }, --   A string constant: "this is a string"
-    -- Character      { }, --   A character constant: 'c', '\n'
-    -- Number         { }, --   A number constant: 234, 0xff
-    -- Boolean        { }, --   A boolean constant: TRUE, false
-    -- Float          { }, --   A floating point constant: 2.3e10
+    String         { fg = pink1 }, --   A string constant: "this is a string"
+    Character      { fg = pink1 }, --   A character constant: 'c', '\n'
+    Number         { fg = pink1 }, --   A number constant: 234, 0xff
+    Boolean        { fg = pink1 }, --   A boolean constant: TRUE, false
+    Float          { fg = pink1 }, --   A floating point constant: 2.3e10
 
     Identifier     { fg = gray1 }, -- (*) Any variable name
     -- Identifier     { fg = c0 }, -- (*) Any variable name
     -- Function       { fg = c18.lighten(20) }, --   Function name (also: methods for classes)
+    Function       { fg = tan0 }, --   Function name (also: methods for classes)
     -- Function       { fg = c9 }, --   Function name (also: methods for classes)
-    Function       { fg = white0 }, --   Function name (also: methods for classes)
+    -- Function       { fg = white.darken(25) }, --   Function name (also: methods for classes)
+    -- Function       { fg = white0 }, --   Function name (also: methods for classes)
     -- Function       { fg = c24.darken(23).desaturate(50) }, --   Function name (also: methods for classes)
 
-    -- Statement      { fg = c42 }, -- (*) Any statement
-    Statement      { fg = gray0 }, -- (*) Any statement
+    Statement      { fg = blue0 }, -- (*) Any statement
+    -- Statement      { fg = gray0 }, -- (*) Any statement
     -- Conditional    { }, --   if, then, else, endif, switch, etc.
     -- Repeat         { }, --   for, do, while, etc.
     -- Label          { }, --   case, default, etc.
@@ -243,25 +245,26 @@ local theme = lush(function(injected_functions)
     -- Keyword        { }, --   any other keyword
     -- Exception      { }, --   try, catch, throw
 
-    -- PreProc        { }, -- (*) Generic Preprocessor
+    -- PreProc        { fg = blue0 }, -- (*) Generic Preprocessor
     -- Include        { }, --   Preprocessor #include
     -- Define         { }, --   Preprocessor #define
     -- Macro          { }, --   Same as Define
     -- PreCondit      { }, --   Preprocessor #if, #else, #endif, etc.
 
-    Type           { fg = tan0 }, -- (*) int, long, char, etc.
+    Type           { fg = yellow0 }, -- (*) int, long, char, etc.
     -- StorageClass   { }, --   static, register, volatile, etc.
     -- Structure      { }, --   struct, union, enum, etc.
     -- Typedef        { }, --   A typedef
 
-    -- Special        { fg = c46 }, -- (*) Any special symbol
+    -- Special        { fg = yellow0 }, -- (*) Any special symbol
+    Special        { fg = white0 }, -- (*) Any special symbol
     -- Special        { fg = c34 }, -- (*) Any special symbol
     -- Special        { fg = c9 }, -- (*) Any special symbol
-    Special        { fg = white0 }, -- (*) Any special symbol
+    -- Special        { fg = white0 }, -- (*) Any special symbol
     -- Special        { fg = c38.desaturate(30) }, -- (*) Any special symbol
     -- SpecialChar    { }, --   Special character in a constant
     -- Tag            { }, --   You can use CTRL-] on this
-    Delimiter      { fg = gray1 }, --   Character that needs attention
+    Delimiter      { fg = gray2 }, --   Character that needs attention
     -- SpecialComment { }, --   Special things inside a comment (e.g. '\n')
     -- Debug          { }, --   Debugging statements
 
@@ -335,7 +338,7 @@ local theme = lush(function(injected_functions)
     -- sym"@text.underline"    { }, -- Underlined
     -- sym"@text.todo"         { }, -- Todo
     -- sym"@comment"           { }, -- Comment
-    -- sym"@punctuation"       { }, -- Delimiter
+    -- sym"@punctuation"       { fg = blue0 }, -- Delimiter
     -- sym"@constant"          { }, -- Constant
     -- sym"@constant.builtin"  { }, -- Special
     -- sym"@constant.macro"    { }, -- Define
@@ -353,11 +356,11 @@ local theme = lush(function(injected_functions)
     -- sym"@function.call"  { fg = c2 }, -- Special
     -- sym"@function.builtin"  { }, -- Special
     -- sym"@function.macro"    { fg = c8 }, -- Macro
-    -- sym"@parameter"         { fg = c14 }, -- Identifier
+    -- sym"@parameter"         { fg = blue0 }, -- Identifier
     -- sym"@method"            { }, -- Function
     -- sym"@field"             { }, -- Identifier
     -- sym"@property"          { fg = c46.lighten(20) }, -- Identifier
-    sym"@property"          { fg = blue0 }, -- Identifier
+    sym"@property"          { fg = c18 }, -- Identifier
     -- sym"@constructor"       { }, -- Special
     -- sym"@conditional"       { }, -- Conditional
     -- sym"@repeat"            { }, -- Repeat
@@ -365,8 +368,9 @@ local theme = lush(function(injected_functions)
     -- sym"@operator"          { }, -- Operator
     -- sym"@keyword"           { }, -- Keyword
     -- sym"@exception"         { }, -- Exception
-    sym"@variable"          { fg = yellow0 }, -- Identifier
-    -- sym"@variable.parameter"          { fg = c19 }, -- Identifier
+    sym"@variable"          { fg = pink0 }, -- Identifier
+    sym"@variable.parameter"          { fg = pink2 }, -- Identifier
+    sym"@variable.member"          { fg = c18 }, -- Identifier
     -- sym"@type"              { }, -- Type
     -- sym"@type.definition"   { }, -- Typedef
     -- sym"@storageclass"      { }, -- StorageClass
